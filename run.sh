@@ -4,8 +4,8 @@ set -euo pipefail
 
 pipenv install
 
-if [ $# -lt 1 ]; then
-	echo "Usage: ./run.sh db_name"
+if [ $# -lt 2 ]; then
+	echo "Usage: ./run.sh db_name pleroma_user"
 	exit 1
 fi
 
@@ -29,5 +29,5 @@ psql $DB -tc "delete from oban_jobs"
 echo "Drained"
 echo "Expecting $(wc -l jobs.backup) entries."
 echo "Respooling..."
-sudo -Hu pleroma pipenv run python insert.py "$DB"
+sudo -Hu $USER pipenv run python insert.py "$DB"
 echo "Have a nice day!"

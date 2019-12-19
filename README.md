@@ -9,8 +9,8 @@ is federating
 You will need:
 - pipenv
 
-the script assumes your pleroma user is called `pleroma`
-
 Usage:
 
-`./run.sh pleroma_dev`
+`./run.sh pleroma_db_name pleroma_user`
+
+for example, `./run.sh pleroma_dev pleroma`
