@@ -1,7 +1,6 @@
 # pleroma-oban-respooler
 
 Dump all jobs from your oban queue and slowly re-queue them
-slowly
 
 Meant for use when your oban queue gets overwhelmed and nothing
 is federating
